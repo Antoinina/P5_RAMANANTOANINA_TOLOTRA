@@ -5,6 +5,8 @@ body {
 
 body ul {
   list-style: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 body a {
@@ -41,6 +43,10 @@ body main img {
 
 body #error-404 p {
   margin-top: 2rem !important;
+}
+
+body aside .btn-back {
+  margin-right: 1rem;
 }
 
 h1 {
@@ -84,6 +90,8 @@ aside .text-container {
 
 .btn {
   padding: 0.5em 2em !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .cart_h2--padding {
@@ -117,5 +125,9 @@ aside .text-container {
 .main-container .btn span {
   position: relative;
   top: 30px;
+}
+
+.confirmation-container {
+  left: 13%;
 }
 /*# sourceMappingURL=style.css.map */

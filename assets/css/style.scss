@@ -3,6 +3,7 @@ body{
     font-family: 'Nobel'!important;
     ul{
         list-style: none!important;
+        box-shadow: none!important;
     }
     a{
         text-decoration: none!important;
@@ -34,6 +35,12 @@ body{
             margin-top:2rem!important;
         }
     }
+    aside{
+        .btn-back{
+            margin-right: 1rem;
+        }
+    }
+
 }
 
 h1{
@@ -73,6 +80,7 @@ aside{
 }
 .btn{
     padding:0.5em 2em!important;
+    box-shadow: none!important;
 }
 .cart_h2--padding{
     padding-bottom:0.4em;
@@ -103,6 +111,10 @@ aside{
             top:30px;
         }
     }
+}
+
+.confirmation-container{
+    left:13%;
 }
 
 

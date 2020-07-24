@@ -16,11 +16,16 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    
+    <!-- Police -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobel">
 </head>
 
-<body>
-    <header>
+<body  style="background-color: black;">
+    <header id="particles-js">
         <nav>
             <ul class="navbar justify-content-around">
                 <li>
@@ -33,30 +38,24 @@
                         <h1 class="text-warning">ORINOCO</h1>
                     </a>
                 </li>
-                <li class="row no-gutters">
-                    <a href="cart.html">
-                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket3 text-dark"
-                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
-                            <path
-                                d="M0 6.5A.5.5 0 0 1 .5 6h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zM.81 9c0 .035.004.07.011.105l1.201 5.604A1 1 0 0 0 3 15.5h10a1 1 0 0 0 .978-.79l1.2-5.605A.495.495 0 0 0 15.19 9h-1.011L13 14.5H3L1.821 9H.81z" />
-                        </svg>
-                    </a>
-                </li>
             </ul>
         </nav>
     </header>
-    <main class="container">
+    <main class="container main-container confirmation-container">
         <section class="row no-gutters justify-content-center align-items-center confirmation-template text-center">
-            <h1>Nous vous remercions pour votre commande !</h1>
-            <p>Votre commande n° 14532888 d'un total de 259€ a bien été validée, vous allez bientôt recevoir un mail de
+            <h1 class="text-white">Nous vous remercions pour votre commande !</h1>
+            <p class="text-white">Votre commande n° 14532888 d'un total de 259€ a bien été validée, vous allez bientôt recevoir un mail de
                 confirmation avec le lien de suivi de votre colis.</p>
         </section>
     </main>
-    <footer class="row no-gutters justify-content-center align-items-center bg-warning fixed-bottom">
+    <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
         <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
     </footer>
+<!--Particules animation-->    
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+<script type="text/javascript">
+particlesJS("particles-js", {"particles":{"number":{"value":180,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.4,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.3,"width":1},"move":{"enable":true,"speed":3,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+</script>
 </body>
 
 </html>

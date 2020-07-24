@@ -19,6 +19,8 @@
         
         <!-- Material Design Bootstrap -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+        <!-- Police -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobel">
 
         <!-- JQuery -->
@@ -32,10 +34,11 @@
         <header id="particles-js"></header>
         <main>
             <section class="main-container">
-                <div id="home" class="text-center">
+                <div id="home" class="text-center" style="display: none;">
                     <h1 class="text-white">Bienvenue dans l'univers <a href="index.html" class="text-white">ORINOCO</a></h1>
                     <div>
                         <a href="?category=camera" class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX" data-wow-delay="0.4s"><span>Photo<i class="fas fa-camera-retro fa-3x"></i></span></a>
+                        <!--Hard redirection because we need to choose actually only one category-->
                         <a href="pages/redirection.html" class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX" data-wow-delay="0.5s"><span>Peluche<i class="fas fa-baby fa-3x"></i></span></a>
                         <a href="pages/redirection.html" class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX" data-wow-delay="0.6s"><span>Menuisier<i class="fas fa-tree fa-3x"></i></span></a>
                     </div> 
@@ -44,7 +47,7 @@
             <section id="page-product" style="display: none;">
                 <header>
                     <nav>
-                        <ul class="navbar justify-content-around" style="box-shadow: none!important;">
+                        <ul class="navbar justify-content-around">
                             <li>
                                 <a class="row no-gutters align-items-center" href="index.html">
                                     <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-cart3 text-warning" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -71,14 +74,14 @@
                     <section class="row no-gutters justify-content-center align-items-center flex-column">
                         <h2 class="h3 text-muted">Notre sélection du moment</h2>
                         <div class="row no-gutters justify-content-center align-items-center ">
-                            <a href="pages/product.html" class="col-md-6 view overlay">
+                            <a href="pages/product.html?contessa" class="col-md-6 view overlay">
                                 <img class="col-md-12" src="images/vcam_1.jpg" alt="Image d'un appareil photo">
                                 <div class="mask flex-center flex-column">
                                     <p class="text-warning h1">Contessa S 310</p>
                                     <p class="text-warning">259€</p>
                                 </div>
                             </a>
-                            <a href="" class="col-md-6 view overlay">
+                            <a href="pages/product.html?contina" class="col-md-6 view overlay">
                                 <img class="col-md-12" src="images/vcam_2.jpg" alt="Image d'un appareil photo">
                                 <div class="mask flex-center flex-column">
                                     <p class="text-warning h1">Contina IIa</p>
@@ -87,21 +90,21 @@
                             </a>
                         </div>
                         <div class="row no-gutters justify-content-center">
-                            <a href="" class="col-md-4 view overlay">
+                            <a href="pages/product.html?ikonta" class="col-md-4 view overlay">
                                 <img class="col-md-12" src="images/vcam_3.jpg" alt="Image d'un appareil photo">
                                 <div class="mask flex-center flex-column">
                                     <p class="text-warning h2">Super Ikonta II B</p>
                                     <p class="text-warning">120€</p>
                                 </div>
                             </a>
-                            <a href="" class="col-md-4 align-self-center view overlay">
+                            <a href="pages/product.html?c35" class="col-md-4 align-self-center view overlay">
                                 <img class="col-md-12" src="images/vcam_5.jpg" alt="Image d'un appareil photo">
                                 <div class="mask flex-center flex-column">
                                     <p class="text-warning h2">C 35 Labo</p>
                                     <p class="text-warning">75€</p>
                                 </div>
                             </a>
-                            <a href="" class="col-md-4 view overlay">
+                            <a href="pages/product.html?contaflex" class="col-md-4 view overlay">
                                 <img class="col-md-12" src="images/vcam_4.jpg" alt="Image d'un appareil photo">
                                 <div class="mask flex-center flex-column">
                                     <p class="text-warning h2">Contaflex Super</p>
@@ -114,9 +117,6 @@
                 <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
                     <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
                 </footer>
-            </section>
-            <section id="page--not-available">
-
             </section>
         </main>
         

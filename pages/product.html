@@ -12,6 +12,12 @@
     <!-- Responsive design-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
     <!-- Links -->
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -51,11 +57,11 @@
         <article class="row no-gutters justify-content-center">
             <h2 class="text-muted">Votre produit</h2>
             <section class="row no-gutters justify-content-around align-items-center product-template">
-                <img class="col-md-6" src="../images/vcam_1.jpg" alt="Image d'un appareil photo">
+                <img id="imageProduct" class="col-md-6" alt="Image d'un appareil photo">
                 <div class="col-md-4 row no-gutters flex-column justify-content-around">
                     <div>
-                        <h3>Contessa S 310</h3>
-                        <p>Prix: 259€</p>
+                        <h3></h3>
+                        <p>Prix: <span id="price"></span>€</p>
                     </div>
                     <select name="lentilles" class="custom-select">
                         <option value="grand-angle">Grand-angle</option>
@@ -67,22 +73,140 @@
                     </select>
                     <a class="btn btn-outline-warning" href="">Ajouter au panier</a>
                     <p>
-                        Catégorie : Prise de vue / Appareil / Boîtier télémètre<br>
+                        Catégorie : <span id="category"></span><br>
 
                         Fabricant : ZEISS IKON<br>
-                        Modèle : Contessa S 310 (Type 10.0351)<br>
-                        Objectif standard : "Tessar" 1:2.8/40mm<br>
-                        Diaphragme maxi/mini : Iris - f:2,8 / 40mm<br>
-                        Modèle : 500 S Prontor électronique. priorité à l'ouverture<br>
-                        Vitesses : 8-500em<br>
+                        Modèle : <span id="model"></span><br>
+                        Objectif standard : <span id="objectif"></span><br>
+                        Diaphragme maxi/mini : <span id="diaphragme"></span><br>
+                        Type : <span id="type"></span><br>
+                        Vitesses : <span id="vitesse"></span><br>
                     </p>
                 </div>
             </section>
         </article>
+        <aside class="row no-gutters justify-content-center">
+            <a  href="../index.html?category=camera" class="btn btn-outline-dark"><i class="fas fa-arrow-left btn-back"></i> RETOUR</a>
+        </aside>
     </main>
-    <footer class="row no-gutters justify-content-center align-items-center bg-warning fixed-bottom">
+    <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
         <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
     </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+
+       let contessaInfo = {
+            name : 'Contessa S 310',
+            price : 259,
+            category : 'Prise de vue / Appareil / Boîtier télémètre',
+            model : 'Contessa S 310 (Type 10.0351)' ,
+            objectif : '"Tessar" 1:2.8/40mm',
+            diaphragme : 'Iris - f:2,8 / 40mm', 
+            type : '500 S Prontor électronique. priorité à l\'ouverture',
+            vitesse : '8-500em',
+            imageUrl : '../images/vcam_1.jpg'
+        };
+
+        let continaInfo = {
+            name : 'Contina IIa',
+            price : 209,
+            category : 'Prise de vue / Appareil / Boîtier reflex 126',
+            model : 'Contina IIa - type 527/24' ,
+            objectif : '"Novar" 1:3,5/45mm',
+            diaphragme : 'Iris ( 3,5 à 22)', 
+            type : 'Central Prontor SVS - 1s-300e + B & retard',
+            vitesse : 'NA',
+            imageUrl : '../images/vcam_2.jpg'
+        };
+        let ikontaInfo = {
+            name : 'Super Ikonta II',
+            price : 120,
+            category : 'Prise de vue / Appareil / Pliant',
+            model : 'Super Ikonta II B [532/16]' ,
+            objectif : '"Tessar" 1:2,8 / 8cm',
+            diaphragme : 'Iris ( 2,8 à 22)', 
+            type : 'Compur Rapid',
+            vitesse : '- 1s / 400e +B à armement préalable',
+            imageUrl : '../images/vcam_3.jpg'
+        };
+        let c35Info = {
+            name : 'C 35 LABO',
+            price : 75,
+            category : 'Prise de vue / Appareil / Boîtier 35mm',
+            model : 'C 35' ,
+            objectif : 'NA',
+            diaphragme : 'NA', 
+            type : 'NA',
+            vitesse : '1s - 125sec',
+            imageUrl : '../images/vcam_5.jpg'
+        };
+        let contaflexInfo = {
+            name : 'Contaflex Super',
+            price : 99,
+            category : 'Prise de vue / Appareil / Boîtier reflex 35mm',
+            model : 'Contaflex Super - type 10.127' ,
+            objectif : '"Tessar" - 1:2,8 /50mm',
+            diaphragme : 'Iris ( 2,8 à 22)', 
+            type : 'NA',
+            vitesse : '1s - 500e',
+            imageUrl : '../images/vcam_4.jpg'
+        };
+
+        if (urlParams.has('contessa')){
+            document.querySelector("h3").innerHTML= contessaInfo.name;
+            document.getElementById('price').innerHTML= contessaInfo.price;
+            document.getElementById("category").innerHTML= contessaInfo.category;
+            document.getElementById('model').innerHTML= contessaInfo.model;
+            document.getElementById("objectif").innerHTML= contessaInfo.objectif;
+            document.getElementById('diaphragme').innerHTML= contessaInfo.diaphragme;
+            document.getElementById('type').innerHTML= contessaInfo.type;
+            document.getElementById('vitesse').innerHTML= contessaInfo.vitesse;
+            document.getElementById('imageProduct').setAttribute("src", contessaInfo.imageUrl);
+        }  else if(urlParams.has('contina')){
+            document.querySelector("h3").innerHTML= continaInfo.name;
+            document.getElementById('price').innerHTML= continaInfo.price;
+            document.getElementById("category").innerHTML= continaInfo.category;
+            document.getElementById('model').innerHTML= continaInfo.model;
+            document.getElementById("objectif").innerHTML= continaInfo.objectif;
+            document.getElementById('diaphragme').innerHTML= continaInfo.diaphragme;
+            document.getElementById('type').innerHTML= continaInfo.type;
+            document.getElementById('vitesse').innerHTML= continaInfo.vitesse;
+            document.getElementById('imageProduct').setAttribute("src", continaInfo.imageUrl);
+        }  else if (urlParams.has('ikonta')){
+            document.querySelector("h3").innerHTML= ikontaInfo.name;
+            document.getElementById('price').innerHTML= ikontaInfo.price;
+            document.getElementById("category").innerHTML= ikontaInfo.category;
+            document.getElementById('model').innerHTML= ikontaInfo.model;
+            document.getElementById("objectif").innerHTML= ikontaInfo.objectif;
+            document.getElementById('diaphragme').innerHTML= ikontaInfo.diaphragme;
+            document.getElementById('type').innerHTML= ikontaInfo.type;
+            document.getElementById('vitesse').innerHTML= ikontaInfo.vitesse;
+            document.getElementById('imageProduct').setAttribute("src", ikontaInfo.imageUrl);
+        } else if (urlParams.has('c35')){
+            document.querySelector("h3").innerHTML= c35Info.name;
+            document.getElementById('price').innerHTML= c35Info.price;
+            document.getElementById("category").innerHTML= c35Info.category;
+            document.getElementById('model').innerHTML= c35Info.model;
+            document.getElementById("objectif").innerHTML= c35Info.objectif;
+            document.getElementById('diaphragme').innerHTML= c35Info.diaphragme;
+            document.getElementById('type').innerHTML= c35Info.type;
+            document.getElementById('vitesse').innerHTML= c35Info.vitesse;
+            document.getElementById('imageProduct').setAttribute("src", c35Info.imageUrl);
+        } else if (urlParams.has('contaflex')){
+            document.querySelector("h3").innerHTML= contaflexInfo.name;
+            document.getElementById('price').innerHTML= contaflexInfo.price;
+            document.getElementById("category").innerHTML= contaflexInfo.category;
+            document.getElementById('model').innerHTML= contaflexInfo.model;
+            document.getElementById("objectif").innerHTML= contaflexInfo.objectif;
+            document.getElementById('diaphragme').innerHTML= contaflexInfo.diaphragme;
+            document.getElementById('type').innerHTML= contaflexInfo.type;
+            document.getElementById('vitesse').innerHTML= contaflexInfo.vitesse;
+            document.getElementById('imageProduct').setAttribute("src", contaflexInfo.imageUrl);
+        }
+        
+
+    </script>
 </body>
 
 </html>

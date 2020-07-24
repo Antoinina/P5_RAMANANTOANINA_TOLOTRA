@@ -12,6 +12,9 @@
     <!-- Responsive design-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
     <!-- Links -->
     <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -30,7 +33,7 @@
                             <path fill-rule="evenodd"
                                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                         </svg>
-                        <h1 class="text-warning">ORINOCO</h1>
+                        <h1 class="text-warning font-weight-normal">ORINOCO</h1>
                     </a>
                 </li>
             </ul>
@@ -99,11 +102,12 @@
                     <input type="checkbox" class="form-check-input" id="saveInfo">
                     <label class="form-check-label" for="saveInfo">Sauvegarder mes coordonnées pour la prochaine fois</label>
                 </div>
-                <button type="submit" class="btn btn-warning">Continuer</button>
+                <button type="submit" class="btn btn-dark">Continuer</button>
             </form>
         </section>
         <aside class="col-md-5 bg- bg-dark text-white">
-            <div class="row no-gutters align-items-center justify-content-between">
+            <div>Votre panier est vide</div>
+            <div class="row no-gutters align-items-center justify-content-between" style="display:none;">
 
                 <img class="col-3" src="../images/vcam_1.jpg" alt="Image d'un appareil photo">
                 <div class="text-container">
@@ -119,11 +123,11 @@
                     <p class="h5 font-weight-normal">Total:</p>
                     <p class="text-muted small font-italic">Taxes de 1.52€ incluse</p>
                 </div>
-                <p class="h4">259€</p>
+                <p class="h4">0€</p>
             </div>
         </aside>
     </main>
-    <footer class="row no-gutters justify-content-center align-items-center bg-warning fixed-bottom">
+    <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
         <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
     </footer>
 </body>
