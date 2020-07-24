@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Paiement - Orinoco</title>
+
+    <link rel="shortcut icon" type="image/jpg" href="../assets/img/favicon.ico">
+
+    <!-- Responsive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Links -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobel">
+</head>
+
+<body class="container">
+    <header>
+        <nav>
+            <ul class="navbar justify-content-around">
+                <li>
+                    <a class="row no-gutters align-items-center" href="../index.html">
+                        <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-cart3 text-warning"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                        </svg>
+                        <h1 class="text-warning">ORINOCO</h1>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="row no-gutters justify-content-around">
+        <section class="col-md-5">
+            <h1 class="invisible">Informations</h1>
+            <h2 class="cart_h2--padding">Coordonnées</h2>
+            <form>
+                <div class="form-group">
+                    <label for="Email" class="d-none">Adresse e-mail</label>
+                    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
+                        placeholder="Votre e-mail">
+                </div>
+            </form>
+            <h2 class="cart_h2--padding">Adresse d'expédition</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="first-name" class="d-none">First-name</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="Prénom" required>
+                    </div>
+                    <div class="form-group col">
+                        <label for="last-name" class="d-none">Last-name</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Nom" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="adress" class="d-none">Adresse</label>
+                    <input type="text" class="form-control" id="adress" placeholder="Adresse" required>
+                </div>
+                <div class="form-group">
+                    <label for="adress2" class="d-none">Complémentaire</label>
+                    <input type="text" class="form-control" id="adress2" placeholder="Bât, code, interphone, étage, etc. (optionnel)">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="zipcode" class="d-none">Code postal</label>
+                        <input type="text" class="form-control" id="zipcode" placeholder="Code postal" required>
+                    </div>
+                    <div class="form-group col">
+                        <label for="city" class="d-none">Ville</label>
+                        <input type="text" class="form-control" id="city" placeholder="Ville" required>
+                    </div>
+                    <div class="form-group col">
+                        <label for="country" class="d-none">Pays</label>
+                        <select id="country" class="custom-select" required>
+                            <option value="">Pays</option>
+                            <option value="France">France</option>
+                            <option value="Belgique">Belgique</option>
+                            <option value="Espagne">Espagne</option>
+                            <option value="Royaume-Uni">Royaume-Uni</option>
+                            <option value="Suisse">Suisse</option>
+                            <option value="Allemagne">Allemagne</option>
+                        </select>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label for="phone" class="d-none">Téléphone</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Téléphone" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="saveInfo">
+                    <label class="form-check-label" for="saveInfo">Sauvegarder mes coordonnées pour la prochaine fois</label>
+                </div>
+                <button type="submit" class="btn btn-warning">Continuer</button>
+            </form>
+        </section>
+        <aside class="col-md-5 bg- bg-dark text-white">
+            <div class="row no-gutters align-items-center justify-content-between">
+
+                <img class="col-3" src="../images/vcam_1.jpg" alt="Image d'un appareil photo">
+                <div class="text-container">
+                    <h3 class="h5">Contessa S 310</h3>
+                    <p class="h6 font-weight-light small ">Lentille: Standard</p>
+                </div>
+
+                <p class="h6 font-weight-normal">259€</p>
+            </div>
+            <hr class="bg-white">
+            <div class="row no-gutters justify-content-between align-items-center">
+                <div>
+                    <p class="h5 font-weight-normal">Total:</p>
+                    <p class="text-muted small font-italic">Taxes de 1.52€ incluse</p>
+                </div>
+                <p class="h4">259€</p>
+            </div>
+        </aside>
+    </main>
+    <footer class="row no-gutters justify-content-center align-items-center bg-warning fixed-bottom">
+        <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
+    </footer>
+</body>
+
+</html>

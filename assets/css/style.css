@@ -1,0 +1,121 @@
+/* General form */
+body {
+  font-family: "Nobel" !important;
+}
+
+body ul {
+  list-style: none !important;
+}
+
+body a {
+  text-decoration: none !important;
+}
+
+body a:hover {
+  opacity: 0.7;
+}
+
+body header {
+  padding: 1.5em 0;
+}
+
+body footer {
+  padding: 1em 0;
+}
+
+body footer p {
+  margin-bottom: 0 !important;
+}
+
+body main {
+  padding-bottom: 8em;
+}
+
+body main h2 {
+  padding-bottom: 1em;
+}
+
+body main img {
+  margin: 0.25em;
+}
+
+body #error-404 p {
+  margin-top: 2rem !important;
+}
+
+h1 {
+  padding: 0 0.2em;
+}
+
+#home-container {
+  background-color: black;
+}
+
+/* Product Template */
+.product-template a {
+  margin: 0.5em 0;
+}
+
+.product-template p {
+  margin-bottom: 0 !important;
+}
+
+.product-template .col-md-4 {
+  height: 100%;
+}
+
+/* Cart Template */
+aside {
+  padding: 3em 2em 0 2em !important;
+}
+
+aside h3, aside p {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+aside .text-container {
+  margin-left: -30% !important;
+}
+
+.form-check {
+  padding-bottom: 1em;
+}
+
+.btn {
+  padding: 0.5em 2em !important;
+}
+
+.cart_h2--padding {
+  padding-bottom: 0.4em;
+}
+
+/* Confirmation Template */
+.confirmation-template {
+  margin-top: 15%;
+}
+
+/* Homepage template */
+.main-container {
+  position: absolute;
+  top: 0;
+  margin-top: 50vh;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 32%;
+}
+
+.main-container div {
+  padding: 1.5rem 0;
+}
+
+.main-container .btn {
+  width: 150px;
+  height: 150px;
+}
+
+.main-container .btn span {
+  position: relative;
+  top: 30px;
+}
+/*# sourceMappingURL=style.css.map */

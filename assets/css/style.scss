@@ -1,0 +1,108 @@
+/* General form */
+body{
+    font-family: 'Nobel'!important;
+    ul{
+        list-style: none!important;
+    }
+    a{
+        text-decoration: none!important;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    header{
+        padding:1.5em 0;
+    }
+    footer{
+        padding:1em 0;
+        p{
+            margin-bottom:0!important;
+        }
+    }
+    main{
+        padding-bottom: 8em;
+        h2{
+            padding-bottom:1em;
+        }
+        img{
+            margin:0.25em;
+        }
+    }
+
+    #error-404{
+        p{
+            margin-top:2rem!important;
+        }
+    }
+}
+
+h1{
+    padding:0 0.2em;
+}
+
+#home-container{
+    background-color: black;
+}
+
+/* Product Template */
+.product-template{
+    a{
+        margin:0.5em 0;
+    }
+    p{
+        margin-bottom:0!important;
+    }
+    .col-md-4{
+        height: 100%;
+    }
+}
+
+/* Cart Template */
+aside{
+    padding:3em 2em 0 2em!important;
+    h3,p{
+        padding-bottom: 0!important;
+        margin-bottom: 0!important;
+    }
+    .text-container{
+        margin-left: -30%!important;
+    }
+}
+.form-check{
+    padding-bottom:1em;
+}
+.btn{
+    padding:0.5em 2em!important;
+}
+.cart_h2--padding{
+    padding-bottom:0.4em;
+}
+
+/* Confirmation Template */
+.confirmation-template{
+    margin-top:15%;
+}
+
+
+/* Homepage template */
+.main-container{
+    position: absolute;
+    top: 0;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    left: 32%;
+
+    div{
+        padding: 1.5rem 0;
+    }
+    .btn{
+        width: 150px;
+        height: 150px;
+        span{
+            position: relative;
+            top:30px;
+        }
+    }
+}
+
+
