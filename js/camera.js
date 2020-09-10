@@ -10,7 +10,8 @@ const productPrice = document.querySelector('.price'),
     productVitesse = document.getElementById('vitesse'),
     productImage = document.querySelector('.imageProduct'),
     addToCart = document.getElementById('addToCart'),
-    mainContainer = document.querySelector('.product-container');
+    mainContainer = document.querySelector('.product-container'),
+    totalPrice = document.getElementById('totalPrice');
 
 let bigAnglePrice = 80,
     tvObjectifPrice = 40,
@@ -76,47 +77,50 @@ class Product {
 
     /* To add in the cart */
     addCartProduct() {
-        let totalPrice = 0;
+        let totalPriceProduct = 0;
 
         // Take the right value to send in the cart
         switch (selectChange.value) {
             case "Grand-angle":
-                totalPrice = bigAnglePrice + this.price;
+                totalPriceProduct = bigAnglePrice + this.price;
                 break;
             case "Télé-objectif":
-                totalPrice = tvObjectifPrice + this.price;
+                totalPriceProduct = tvObjectifPrice + this.price;
                 break;
             case "Fisheye":
-                totalPrice = this.price + fisheyePrice;
+                totalPriceProduct = this.price + fisheyePrice;
                 break;
             case "Macro":
-                totalPrice = this.price + macroPrice;
+                totalPriceProduct = this.price + macroPrice;
                 break;
             case "Portrait":
-                totalPrice = this.price + portraitPrice;
+                totalPriceProduct = this.price + portraitPrice;
                 break;
             default:
-                totalPrice = this.price;
+                totalPriceProduct = this.price;
                 break;
         }
 
         localStorage.setItem("name", `${this.name}`);
         localStorage.setItem("imageUrl", `${this.imageUrl}`);
-        localStorage.setItem("price", `${totalPrice}`);
+        localStorage.setItem("price", `${totalPriceProduct}`);
+        localStorage.setItem("select", `${selectChange.value}`);
 
         let nameStored = localStorage.getItem('name');
         let priceStored = localStorage.getItem('price');
         let imageStored = localStorage.getItem('imageUrl');
+        let selectStored = localStorage.getItem('select');
 
             productSidebar.innerHTML += `
                 <img id="imageProduct--icon" src="${imageStored}"  alt="Miniature d'un appareil photo" class="col-4">
                 <div class="col-7">
-                    <h3 class="h6">${nameStored} / ${selectChange.value}</h3>
+                    <h3 class="h6">${nameStored} / ${selectStored}</h3>
                     <p>Prix: <span class="price">${priceStored}</span>€</p>
                 </div>
                 `;
 
-        totalSidebar.innerHTML = priceStored;
+            totalPrice.innerHTML = `${priceStored}`;
+
     }
 
 }

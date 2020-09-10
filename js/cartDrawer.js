@@ -29,7 +29,7 @@ const productSidebar = document.querySelector('.cart-sidebar_product'),
 /* Add articles in the sidebar cart */
 if (localStorage.length == 0) {
     productSidebar.innerHTML = `
-        <div class="font-italic">Il n'y aucun article dans votre panier<div>
+        <div class="font-italic">Il n'y aucun article dans votre panier</div>
         
         `;
 }
