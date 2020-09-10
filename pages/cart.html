@@ -39,7 +39,7 @@
             </ul>
         </nav>
     </header>
-    <main class="row no-gutters justify-content-around">
+    <main class="row no-gutters justify-content-around product-container">
         <section class="col-md-5">
             <h1 class="invisible">Informations</h1>
             <h2 class="cart_h2--padding">Coordonnées</h2>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label for="Email" class="d-none">Adresse e-mail</label>
                     <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
-                        placeholder="Votre e-mail">
+                        placeholder="Votre e-mail" required>
                 </div>
             </form>
             <h2 class="cart_h2--padding">Adresse d'expédition</h2>
@@ -62,14 +62,15 @@
                         <input type="text" class="form-control" id="last-name" placeholder="Nom" required>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="adress" class="d-none">Adresse</label>
                     <input type="text" class="form-control" id="adress" placeholder="Adresse" required>
                 </div>
                 <div class="form-group">
                     <label for="adress2" class="d-none">Complémentaire</label>
-                    <input type="text" class="form-control" id="adress2" placeholder="Bât, code, interphone, étage, etc. (optionnel)">
+                    <input type="text" class="form-control" id="adress2"
+                        placeholder="Bât, code, interphone, étage, etc. (optionnel)">
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
@@ -93,29 +94,22 @@
                         </select>
                     </div>
                 </div>
-               
+
                 <div class="form-group">
                     <label for="phone" class="d-none">Téléphone</label>
                     <input type="tel" class="form-control" id="phone" placeholder="Téléphone" required>
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="saveInfo">
-                    <label class="form-check-label" for="saveInfo">Sauvegarder mes coordonnées pour la prochaine fois</label>
+                    <label class="form-check-label" for="saveInfo">Sauvegarder mes coordonnées pour la prochaine
+                        fois</label>
                 </div>
                 <button type="submit" class="btn btn-dark">Continuer</button>
             </form>
         </section>
         <aside class="col-md-5 bg- bg-dark text-white">
-            <div>Votre panier est vide</div>
-            <div class="row no-gutters align-items-center justify-content-between" style="display:none;">
+            <div class="row justify-content-around align-items-center cart">
 
-                <img class="col-3" src="../images/vcam_1.jpg" alt="Image d'un appareil photo">
-                <div class="text-container">
-                    <h3 class="h5">Contessa S 310</h3>
-                    <p class="h6 font-weight-light small ">Lentille: Standard</p>
-                </div>
-
-                <p class="h6 font-weight-normal">259€</p>
             </div>
             <hr class="bg-white">
             <div class="row no-gutters justify-content-between align-items-center">
@@ -130,6 +124,31 @@
     <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
         <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
     </footer>
+
+
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    <script src="../js/404.js" async></script>
+    <script src="../js/camera.js"></script>
+    <script src="../js/product.js" async></script>
+    <script src="../js/cart.js" async></script>
 </body>
 
 </html>

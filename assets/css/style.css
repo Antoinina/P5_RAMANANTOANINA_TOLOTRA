@@ -29,10 +29,6 @@ body footer p {
   margin-bottom: 0 !important;
 }
 
-body main {
-  padding-bottom: 8em;
-}
-
 body main h2 {
   padding-bottom: 1em;
 }
@@ -49,11 +45,18 @@ body aside .btn-back {
   margin-right: 1rem;
 }
 
+body #particles-js {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
 h1 {
   padding: 0 0.2em;
 }
 
-#home-container {
+#home-container, #confirmation-container {
   background-color: black;
 }
 
@@ -104,13 +107,10 @@ aside .text-container {
 }
 
 /* Homepage template */
-.main-container {
-  position: absolute;
-  top: 0;
+.main-container #home {
   margin-top: 50vh;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  left: 32%;
 }
 
 .main-container div {
@@ -127,7 +127,69 @@ aside .text-container {
   top: 30px;
 }
 
-.confirmation-container {
-  left: 13%;
+#page-product {
+  display: none;
+}
+
+/* Page product */
+.product-container {
+  padding-bottom: 8rem;
+}
+
+/* Cart sidebar */
+#cart-sidebar {
+  width: 25%;
+  min-height: 770px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  /* To hide the sidebar */
+  -webkit-transform: translate(0, -105%);
+          transform: translate(0, -105%);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#cart-sidebar .cart-sidebar_product {
+  margin-bottom: 1rem;
+}
+
+#cart-sidebar .cart-sidebar_product .col-7 {
+  margin-bottom: 1em;
+}
+
+#cart-sidebar .product-sidebar .btn {
+  padding: 0 0.75em !important;
+}
+
+#cart-sidebar .product-sidebar .btn span {
+  font-size: 20px;
+}
+
+#cart-sidebar .product-sidebar .btn:hover {
+  opacity: 0.8;
+}
+
+#cart-sidebar .product-sidebar #quantity {
+  padding: 0 1em;
+}
+
+#cart-sidebar .footer {
+  position: fixed;
+  top: 650px;
+  width: 80%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#cart-sidebar .footer p {
+  margin-bottom: 1rem !important;
+}
+
+#cart-sidebar > button {
+  position: relative;
+  bottom: 30px;
 }
 /*# sourceMappingURL=style.css.map */

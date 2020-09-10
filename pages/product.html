@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Contessa S 310 - Orinoco</title>
+    <title></title>
 
     <link rel="shortcut icon" type="image/jpg" href="../assets/img/favicon.ico">
 
@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="row no-gutters">
-                    <a href="cart.html">
+                    <button class="btn" onclick="openCart()">
                         <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket3 text-dark"
                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -48,30 +48,32 @@
                             <path
                                 d="M0 6.5A.5.5 0 0 1 .5 6h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zM.81 9c0 .035.004.07.011.105l1.201 5.604A1 1 0 0 0 3 15.5h10a1 1 0 0 0 .978-.79l1.2-5.605A.495.495 0 0 0 15.19 9h-1.011L13 14.5H3L1.821 9H.81z" />
                         </svg>
-                    </a>
+                    </button>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="container">
+    
+    <main class="container product-container">
+        <!--Product page Template-->
         <article class="row no-gutters justify-content-center">
             <h2 class="text-muted">Votre produit</h2>
             <section class="row no-gutters justify-content-around align-items-center product-template">
-                <img id="imageProduct" class="col-md-6" alt="Image d'un appareil photo">
+                <img class="col-md-6 imageProduct" alt="Image d'un appareil photo">
                 <div class="col-md-4 row no-gutters flex-column justify-content-around">
                     <div>
-                        <h3></h3>
-                        <p>Prix: <span id="price"></span>€</p>
+                        <h3 class="productTitle"></h3>
+                        <p>Prix: <span class="price"></span>€</p>
                     </div>
                     <select name="lentilles" class="custom-select">
-                        <option value="grand-angle">Grand-angle</option>
-                        <option value="standard" selected>Standard</option>
-                        <option value="télé-objectif">Télé-objectif</option>
-                        <option value="fisheye">Fisheye</option>
-                        <option value="macro">Macro</option>
-                        <option value="portrait">Portrait</option>
+                        <option value="Grand-angle">Grand-angle (+80€)</option>
+                        <option value="Standard" selected>Standard</option>
+                        <option value="Télé-objectif">Télé-objectif (+40€)</option>
+                        <option value="Fisheye">Fisheye (+22€)</option>
+                        <option value="Macro">Macro (+35€)</option>
+                        <option value="Portrait">Portrait (+50€)</option>
                     </select>
-                    <a class="btn btn-outline-warning" href="">Ajouter au panier</a>
+                    <a class="btn btn-outline-warning" onclick="addCart()">Ajouter au panier</a>
                     <p>
                         Catégorie : <span id="category"></span><br>
 
@@ -86,127 +88,44 @@
             </section>
         </article>
         <aside class="row no-gutters justify-content-center">
-            <a  href="../index.html?category=camera" class="btn btn-outline-dark"><i class="fas fa-arrow-left btn-back"></i> RETOUR</a>
+            <a href="../index.html?category=camera" class="btn btn-outline-dark"><i
+                    class="fas fa-arrow-left btn-back"></i> RETOUR</a>
         </aside>
+        <!--End of Product page Template-->
+
+        <!--Drawer cart Template-->
+        <aside id="cart-sidebar" class="bg-warning container">
+            <button type="button" class="close" aria-label="Close" onclick="closeCart()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="text-center">Votre panier</h4>
+            <hr class="w-100">
+            <section class="row no-gutters flex-column align-items-center product-sidebar"> 
+                <div class="row justify-content-around align-items-center cart-sidebar_product">
+                    <!--<div class="row no-gutters align-items-center justify-content-center bg-white">
+                        <button class="btn btn-dark"><span>-</span></button>
+                        <p id="quantity">1</p>
+                        <button class="btn btn-dark"><span>+</span></button>
+                    </div>-->
+                </div>
+            </section>
+            <section class="footer row flex-column no-gutters">
+                <div class="row justify-content-between">
+                    <p>SOUS-TOTAL</p>
+                    <p class="font-weight-bold"><span id="totalPrice"></span>€</p>
+                </div>
+                <button class="btn btn-dark"><a href="cart.html" onclick="addCartPage()" class="text-white">VALIDER</a></button>
+            </section>        
+        </aside>
+        <!--End of drawer cart Template-->
     </main>
     <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
         <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
     </footer>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-
-       let contessaInfo = {
-            name : 'Contessa S 310',
-            price : 259,
-            category : 'Prise de vue / Appareil / Boîtier télémètre',
-            model : 'Contessa S 310 (Type 10.0351)' ,
-            objectif : '"Tessar" 1:2.8/40mm',
-            diaphragme : 'Iris - f:2,8 / 40mm', 
-            type : '500 S Prontor électronique. priorité à l\'ouverture',
-            vitesse : '8-500em',
-            imageUrl : '../images/vcam_1.jpg'
-        };
-
-        let continaInfo = {
-            name : 'Contina IIa',
-            price : 209,
-            category : 'Prise de vue / Appareil / Boîtier reflex 126',
-            model : 'Contina IIa - type 527/24' ,
-            objectif : '"Novar" 1:3,5/45mm',
-            diaphragme : 'Iris ( 3,5 à 22)', 
-            type : 'Central Prontor SVS - 1s-300e + B & retard',
-            vitesse : 'NA',
-            imageUrl : '../images/vcam_2.jpg'
-        };
-        let ikontaInfo = {
-            name : 'Super Ikonta II',
-            price : 120,
-            category : 'Prise de vue / Appareil / Pliant',
-            model : 'Super Ikonta II B [532/16]' ,
-            objectif : '"Tessar" 1:2,8 / 8cm',
-            diaphragme : 'Iris ( 2,8 à 22)', 
-            type : 'Compur Rapid',
-            vitesse : '- 1s / 400e +B à armement préalable',
-            imageUrl : '../images/vcam_3.jpg'
-        };
-        let c35Info = {
-            name : 'C 35 LABO',
-            price : 75,
-            category : 'Prise de vue / Appareil / Boîtier 35mm',
-            model : 'C 35' ,
-            objectif : 'NA',
-            diaphragme : 'NA', 
-            type : 'NA',
-            vitesse : '1s - 125sec',
-            imageUrl : '../images/vcam_5.jpg'
-        };
-        let contaflexInfo = {
-            name : 'Contaflex Super',
-            price : 99,
-            category : 'Prise de vue / Appareil / Boîtier reflex 35mm',
-            model : 'Contaflex Super - type 10.127' ,
-            objectif : '"Tessar" - 1:2,8 /50mm',
-            diaphragme : 'Iris ( 2,8 à 22)', 
-            type : 'NA',
-            vitesse : '1s - 500e',
-            imageUrl : '../images/vcam_4.jpg'
-        };
-
-        if (urlParams.has('contessa')){
-            document.querySelector("h3").innerHTML= contessaInfo.name;
-            document.getElementById('price').innerHTML= contessaInfo.price;
-            document.getElementById("category").innerHTML= contessaInfo.category;
-            document.getElementById('model').innerHTML= contessaInfo.model;
-            document.getElementById("objectif").innerHTML= contessaInfo.objectif;
-            document.getElementById('diaphragme').innerHTML= contessaInfo.diaphragme;
-            document.getElementById('type').innerHTML= contessaInfo.type;
-            document.getElementById('vitesse').innerHTML= contessaInfo.vitesse;
-            document.getElementById('imageProduct').setAttribute("src", contessaInfo.imageUrl);
-        }  else if(urlParams.has('contina')){
-            document.querySelector("h3").innerHTML= continaInfo.name;
-            document.getElementById('price').innerHTML= continaInfo.price;
-            document.getElementById("category").innerHTML= continaInfo.category;
-            document.getElementById('model').innerHTML= continaInfo.model;
-            document.getElementById("objectif").innerHTML= continaInfo.objectif;
-            document.getElementById('diaphragme').innerHTML= continaInfo.diaphragme;
-            document.getElementById('type').innerHTML= continaInfo.type;
-            document.getElementById('vitesse').innerHTML= continaInfo.vitesse;
-            document.getElementById('imageProduct').setAttribute("src", continaInfo.imageUrl);
-        }  else if (urlParams.has('ikonta')){
-            document.querySelector("h3").innerHTML= ikontaInfo.name;
-            document.getElementById('price').innerHTML= ikontaInfo.price;
-            document.getElementById("category").innerHTML= ikontaInfo.category;
-            document.getElementById('model').innerHTML= ikontaInfo.model;
-            document.getElementById("objectif").innerHTML= ikontaInfo.objectif;
-            document.getElementById('diaphragme').innerHTML= ikontaInfo.diaphragme;
-            document.getElementById('type').innerHTML= ikontaInfo.type;
-            document.getElementById('vitesse').innerHTML= ikontaInfo.vitesse;
-            document.getElementById('imageProduct').setAttribute("src", ikontaInfo.imageUrl);
-        } else if (urlParams.has('c35')){
-            document.querySelector("h3").innerHTML= c35Info.name;
-            document.getElementById('price').innerHTML= c35Info.price;
-            document.getElementById("category").innerHTML= c35Info.category;
-            document.getElementById('model').innerHTML= c35Info.model;
-            document.getElementById("objectif").innerHTML= c35Info.objectif;
-            document.getElementById('diaphragme').innerHTML= c35Info.diaphragme;
-            document.getElementById('type').innerHTML= c35Info.type;
-            document.getElementById('vitesse').innerHTML= c35Info.vitesse;
-            document.getElementById('imageProduct').setAttribute("src", c35Info.imageUrl);
-        } else if (urlParams.has('contaflex')){
-            document.querySelector("h3").innerHTML= contaflexInfo.name;
-            document.getElementById('price').innerHTML= contaflexInfo.price;
-            document.getElementById("category").innerHTML= contaflexInfo.category;
-            document.getElementById('model').innerHTML= contaflexInfo.model;
-            document.getElementById("objectif").innerHTML= contaflexInfo.objectif;
-            document.getElementById('diaphragme').innerHTML= contaflexInfo.diaphragme;
-            document.getElementById('type').innerHTML= contaflexInfo.type;
-            document.getElementById('vitesse').innerHTML= contaflexInfo.vitesse;
-            document.getElementById('imageProduct').setAttribute("src", contaflexInfo.imageUrl);
-        }
-        
-
-    </script>
+    <script src="../js/404.js" async></script>
+    <script src="../js/camera.js"></script>
+    <script src="../js/product.js" async></script>
+    <script src="../js/cartDrawer.js" async></script>
 </body>
-
 </html>

@@ -1,152 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>Orinoco - Home</title>
-        <link rel="shortcut icon" type="image/jpg" href="assets/img/favicon.ico">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <!-- Responsive design-->
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Orinoco - Home</title>
+    <link rel="shortcut icon" type="image/jpg" href="assets/img/favicon.ico">
 
-         <!-- Links -->
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-        
-        <!-- Material Design Bootstrap -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- Responsive design-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Police -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobel">
+    <!-- Links -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-        <!-- JQuery -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <!-- Police -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nobel">
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
     </head>
-    <body id="home-container">
-        <header id="particles-js"></header>
-        <main>
-            <section class="main-container">
-                <div id="home" class="text-center" style="display: none;">
-                    <h1 class="text-white">Bienvenue dans l'univers <a href="index.html" class="text-white">ORINOCO</a></h1>
-                    <div>
-                        <a href="?category=camera" class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX" data-wow-delay="0.4s"><span>Photo<i class="fas fa-camera-retro fa-3x"></i></span></a>
-                        <!--Hard redirection because we need to choose actually only one category-->
-                        <a href="pages/redirection.html" class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX" data-wow-delay="0.5s"><span>Peluche<i class="fas fa-baby fa-3x"></i></span></a>
-                        <a href="pages/redirection.html" class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX" data-wow-delay="0.6s"><span>Menuisier<i class="fas fa-tree fa-3x"></i></span></a>
-                    </div> 
+
+<body id="home-container" class="bg-dark">
+    <aside id="particles-js"></aside>
+    <main>
+        <section class="main-container">
+            <div id="home" class="text-center">
+                <h1 class="text-white">Bienvenue dans l'univers <a href="index.html" class="text-white">ORINOCO</a></h1>
+                <div>
+                    <a href="?category=camera"
+                        class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX"
+                        data-wow-delay="0.4s"><span>Photo<i class="fas fa-camera-retro fa-3x"></i></span></a>
+                    <!--Hard redirection because we need to choose actually only one category-->
+                    <a href="?category=teddies"
+                        class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX"
+                        data-wow-delay="0.5s"><span>Peluche<i class="fas fa-baby fa-3x"></i></span></a>
+                    <a href="?category=oak"
+                        class="btn sunny-morning-gradient btn-lg rounded-circle text-dark wow flipInX"
+                        data-wow-delay="0.6s"><span>Menuisier<i class="fas fa-tree fa-3x"></i></span></a>
                 </div>
-            </section>
-            <section id="page-product" style="display: none;">
-                <header>
-                    <nav>
-                        <ul class="navbar justify-content-around">
-                            <li>
-                                <a class="row no-gutters align-items-center" href="index.html">
-                                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-cart3 text-warning" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                                    </svg>
-                                    <h1 class="text-warning">ORINOCO</h1>
-                                </a>
-                            </li>
-                            <li class="row no-gutters">
-                                <a href="pages/cart.html">
-                                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket3 text-dark"
-                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
-                                        <path
-                                            d="M0 6.5A.5.5 0 0 1 .5 6h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zM.81 9c0 .035.004.07.011.105l1.201 5.604A1 1 0 0 0 3 15.5h10a1 1 0 0 0 .978-.79l1.2-5.605A.495.495 0 0 0 15.19 9h-1.011L13 14.5H3L1.821 9H.81z" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </header>
-                <main class="container">
-                    <section class="row no-gutters justify-content-center align-items-center flex-column">
-                        <h2 class="h3 text-muted">Notre sélection du moment</h2>
-                        <div class="row no-gutters justify-content-center align-items-center ">
-                            <a href="pages/product.html?contessa" class="col-md-6 view overlay">
-                                <img class="col-md-12" src="images/vcam_1.jpg" alt="Image d'un appareil photo">
-                                <div class="mask flex-center flex-column">
-                                    <p class="text-warning h1">Contessa S 310</p>
-                                    <p class="text-warning">259€</p>
-                                </div>
+            </div>
+        </section>
+        <section id="page-product">
+            <header>
+                <nav>
+                    <ul class="navbar justify-content-around">
+                        <li>
+                            <a class="row no-gutters align-items-center" href="index.html">
+                                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-cart3 text-warning"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                                </svg>
+                                <h1 class="text-warning">ORINOCO</h1>
                             </a>
-                            <a href="pages/product.html?contina" class="col-md-6 view overlay">
-                                <img class="col-md-12" src="images/vcam_2.jpg" alt="Image d'un appareil photo">
-                                <div class="mask flex-center flex-column">
-                                    <p class="text-warning h1">Contina IIa</p>
-                                    <p class="text-warning">209€</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="row no-gutters justify-content-center">
-                            <a href="pages/product.html?ikonta" class="col-md-4 view overlay">
-                                <img class="col-md-12" src="images/vcam_3.jpg" alt="Image d'un appareil photo">
-                                <div class="mask flex-center flex-column">
-                                    <p class="text-warning h2">Super Ikonta II B</p>
-                                    <p class="text-warning">120€</p>
-                                </div>
-                            </a>
-                            <a href="pages/product.html?c35" class="col-md-4 align-self-center view overlay">
-                                <img class="col-md-12" src="images/vcam_5.jpg" alt="Image d'un appareil photo">
-                                <div class="mask flex-center flex-column">
-                                    <p class="text-warning h2">C 35 Labo</p>
-                                    <p class="text-warning">75€</p>
-                                </div>
-                            </a>
-                            <a href="pages/product.html?contaflex" class="col-md-4 view overlay">
-                                <img class="col-md-12" src="images/vcam_4.jpg" alt="Image d'un appareil photo">
-                                <div class="mask flex-center flex-column">
-                                    <p class="text-warning h2">Contaflex Super</p>
-                                    <p class="text-warning">99€</p>
-                                </div>
-                            </a>
-                        </div>
-                    </section>
-                </main>
-                <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
-                    <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
-                </footer>
-            </section>
-        </main>
-        
-    <!--Particules animation-->    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-    <script type="text/javascript">
-    particlesJS("particles-js", {"particles":{"number":{"value":180,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.4,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.3,"width":1},"move":{"enable":true,"speed":3,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
-    </script>
-    
-    <!--Navigation Home-->
+                        </li>
+                        <li class="row no-gutters">
+                            <button class="btn btn-lg">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket3 text-dark"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10.243 1.071a.5.5 0 0 1 .686.172l3 5a.5.5 0 1 1-.858.514l-3-5a.5.5 0 0 1 .172-.686zm-4.486 0a.5.5 0 0 0-.686.172l-3 5a.5.5 0 1 0 .858.514l3-5a.5.5 0 0 0-.172-.686z" />
+                                    <path
+                                        d="M0 6.5A.5.5 0 0 1 .5 6h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zM.81 9c0 .035.004.07.011.105l1.201 5.604A1 1 0 0 0 3 15.5h10a1 1 0 0 0 .978-.79l1.2-5.605A.495.495 0 0 0 15.19 9h-1.011L13 14.5H3L1.821 9H.81z" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container product-container">
+               <div class="row no-gutters justify-content-center align-items-center flex-column">
+                    <h2 class="h3 text-muted">Notre sélection du moment</h2>      
+               </div>
+            </div>
+            <footer
+                class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
+                <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
+            </footer>
+        </section>
+    </main>
+
+    <!--Particules animation-->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-	    const categoryInfo = urlParams.get('category');
-     
-        /* Hide home page and show product page*/
-        if(categoryInfo !== null){
-            $('#home').hide();
-            $('#particles-js').hide();
-            document.getElementById('home-container').style.backgroundColor = '#0000'; // Change background color of page product
-		    $('#page-product').show();
-        } else {
-            $('#home').show();
-            $('#page-product').hide();
-	    }
-        
-        /*Animation initialization*/
-        $( document ).ready(function() {
-            new WOW().init();
-        });
-      
+        particlesJS("particles-js", { "particles": { "number": { "value": 180, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.4, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.3, "width": 1 }, "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true }); var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function () { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
     </script>
-    </body>
+
+    <!--Navigation Home-->
+    <script src="js/404.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
 </html>

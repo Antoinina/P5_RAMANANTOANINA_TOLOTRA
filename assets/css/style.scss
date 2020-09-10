@@ -3,7 +3,7 @@ body{
     font-family: 'Nobel'!important;
     ul{
         list-style: none!important;
-        box-shadow: none!important;
+        box-shadow: none!important; 
     }
     a{
         text-decoration: none!important;
@@ -21,7 +21,6 @@ body{
         }
     }
     main{
-        padding-bottom: 8em;
         h2{
             padding-bottom:1em;
         }
@@ -40,6 +39,12 @@ body{
             margin-right: 1rem;
         }
     }
+    #particles-js{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+    }
 
 }
 
@@ -47,7 +52,7 @@ h1{
     padding:0 0.2em;
 }
 
-#home-container{
+#home-container, #confirmation-container{
     background-color: black;
 }
 
@@ -94,12 +99,10 @@ aside{
 
 /* Homepage template */
 .main-container{
-    position: absolute;
-    top: 0;
-    margin-top: 50vh;
-    transform: translateY(-50%);
-    left: 32%;
-
+    #home{
+        margin-top: 50vh;
+        transform: translateY(-50%);
+    }
     div{
         padding: 1.5rem 0;
     }
@@ -113,8 +116,67 @@ aside{
     }
 }
 
-.confirmation-container{
-    left:13%;
+#page-product{
+    display: none;
 }
 
 
+/* Page product */
+.product-container{
+    padding-bottom: 8rem;
+}
+
+/* Cart sidebar */
+#cart-sidebar{
+    width: 25%;
+    min-height:770px;
+    position: absolute;
+    right: 0;
+    top:0;
+
+    /* To hide the sidebar */
+    transform: translate(0, -105%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+    .cart-sidebar_product{
+        margin-bottom: 1rem;
+
+        .col-7{
+            margin-bottom:1em;
+        }
+    }
+
+    .product-sidebar{
+        .btn{
+            padding:0 0.75em!important;   
+            span{
+                font-size:20px;
+            }
+            &:hover{
+                opacity: 0.8;
+            }   
+        }
+    
+        #quantity{
+            padding:0 1em;
+        }
+
+    }
+
+    .footer{
+        position: fixed;
+        top: 650px;
+        width: 80%;
+        margin-left:0;
+        margin-right: 0;
+        p{
+            margin-bottom: 1rem!important;
+        }
+    }
+
+    &>button{
+        position: relative;
+        bottom:30px;
+    }
+    
+}
