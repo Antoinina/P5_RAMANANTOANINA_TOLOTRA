@@ -42,35 +42,28 @@
     <main class="row no-gutters justify-content-around product-container">
         <section class="col-md-5">
             <h1 class="invisible">Informations</h1>
-            <h2 class="cart_h2--padding">Coordonnées</h2>
-            <form>
+            <form class="needs-validation" novalidate>
+                <h2 class="cart_h2--padding">Coordonnées</h2>
                 <div class="form-group">
                     <label for="Email" class="d-none">Adresse e-mail</label>
-                    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
-                        placeholder="Votre e-mail" required>
+                    <input type="email" class="form-control" id="Email" placeholder="Votre e-mail" required>
+                    <div class="invalid-feedback">Veuillez entrer une adresse mail valide</div>
                 </div>
-            </form>
-            <h2 class="cart_h2--padding">Adresse d'expédition</h2>
-            <form>
+                <h2 class="cart_h2--padding">Adresse d'expédition</h2>
                 <div class="form-row">
                     <div class="form-group col">
                         <label for="first-name" class="d-none">First-name</label>
-                        <input type="text" class="form-control" id="first-name" placeholder="Prénom" required>
+                        <input type="text" class="form-control" id="firstName" placeholder="Prénom" required>
                     </div>
                     <div class="form-group col">
                         <label for="last-name" class="d-none">Last-name</label>
-                        <input type="text" class="form-control" id="last-name" placeholder="Nom" required>
+                        <input type="text" class="form-control" id="lastName" placeholder="Nom" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="adress" class="d-none">Adresse</label>
                     <input type="text" class="form-control" id="adress" placeholder="Adresse" required>
-                </div>
-                <div class="form-group">
-                    <label for="adress2" class="d-none">Complémentaire</label>
-                    <input type="text" class="form-control" id="adress2"
-                        placeholder="Bât, code, interphone, étage, etc. (optionnel)">
                 </div>
                 <div class="form-row">
                     <div class="form-group col">
@@ -98,11 +91,7 @@
                 <div class="form-group">
                     <label for="phone" class="d-none">Téléphone</label>
                     <input type="tel" class="form-control" id="phone" placeholder="Téléphone" required>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="saveInfo">
-                    <label class="form-check-label" for="saveInfo">Sauvegarder mes coordonnées pour la prochaine
-                        fois</label>
+                    <div class="invalid-feedback">Veuillez entrer un numéro de téléphone valide</div>
                 </div>
                 <button type="submit" class="btn btn-dark">Continuer</button>
             </form>
@@ -131,8 +120,7 @@
     </footer>
 
     <script src="../js/cart.js" ></script>
-    <script src="../js/camera.js"></script>
-    <script src="../js/cartDrawer.js" async></script>
+    <script src="../js/404.js"></script>
     
     
 </body>
