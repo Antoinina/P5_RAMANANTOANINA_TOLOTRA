@@ -1,31 +1,45 @@
 const cartContainer = document.querySelector(".cart"),
-    showTotalBasket = document.querySelector(".totalBasket"),
+    totalContainer = document.querySelector(".totalBasket"),
     qtyItems = document.getElementById('quantity');
 
-let nameStored = localStorage.getItem('name');
-let priceStored = localStorage.getItem('price');
-let imageStored = localStorage.getItem('imageUrl');
-let selectStored = localStorage.getItem('select');
+const url = "http://localhost:3000/api/cameras",
+    urlPost = "http://localhost:3000/api/cameras/order";
 
-/* Pick up the data in the localStorage */
-if (localStorage.length == 0) {
-    cartContainer.innerHTML = `<div class="font-italic">Il n'y aucun article dans votre panier</div>`; // Items verification in localStorage
-} else {
+let arrayCart = []; // Create an array to stock the item from teh localStorage
 
-    cartContainer.innerHTML += `
-                <img id="imageProduct--icon" src="${imageStored}"  alt="Miniature d'un appareil photo" class="col-4">
-                <div class="col-7">
-                    <h3 class="h6">${nameStored} / ${selectStored}</h3>
-                    <p>Prix: <span class="price">${priceStored}</span>€</p>
-                </div>
-                `;
-
-    showTotalBasket.innerHTML = `${priceStored}`;
-
+// Put all items in array
+for (i = 0; i < localStorage.length; i++) {
+    arrayCart.push(localStorage[i]);
 }
 
-let value = parseInt(qtyItems.value, 10); // Transform de string in input to integer
-let totalBasket = priceStored;
+const nameStored = localStorage.getItem("nameProduct"),
+    priceStored = localStorage.getItem("priceProduct"),
+    imgStored = localStorage.getItem("imageProduct"),
+    lensStored = localStorage.getItem("lens");
+
+function hasard(min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+}
+
+const orderId = hasard(112225,25549883);
+
+
+if (arrayCart != null) {
+    cartContainer.innerHTML = `
+                <img id="imageProduct--icon" src="${imgStored}"  alt="Miniature d'un appareil photo" class="col-4">
+                <div class="col-7">
+                    <h3 class="h6">${nameStored} / ${lensStored}</h3>
+                    <p>Prix: <span class="price">${priceStored}</span>€</p>
+                </div>
+                
+                `;
+    totalContainer.innerHTML = `${priceStored}`;
+} else {
+    cartContainer.innerHTML = `<p class="font-italic">Il n'y aucun article dans votre panier</p>`;
+}
+
+let value = parseInt(qtyItems.value, 10), // Transform de string in input to integer
+    totalBasket = priceStored;
 
 // To increment the basket
 function incBasketPrice() {
@@ -33,7 +47,7 @@ function incBasketPrice() {
     qtyItems.value = value;
 
     totalBasket = priceStored * value; // Calcul the basket price to the input's value
-    showTotalBasket.innerHTML = `${totalBasket}`; // Update the total price to show
+    totalContainer.innerHTML = `${totalBasket}`; // Update the total price to show
 
     return totalBasket;
 }
@@ -45,21 +59,20 @@ function decBasketPrice() {
     qtyItems.value = value;
 
     totalBasket = totalBasket - priceStored; // Retire the item's price to the total basket
-    showTotalBasket.innerHTML = `${totalBasket}`; // Update the total price to show
+    totalContainer.innerHTML = `${totalBasket}`; // Update the total price to show
 
     // Delete items when total is 0
     if (value === 0) {
         localStorage.clear(); // Delete items in the localStorage
+        arrayCart.splice(0, arrayCart.length); // Clear the array
         totalBasket = 0;
-        showTotalBasket.innerHTML = `${totalBasket}`;
+        totalContainer.innerHTML = `${totalBasket}`;
         cartContainer.innerHTML = `<div class="font-italic">Il n'y aucun article dans votre panier</div>`;
     }
 
     return totalBasket;
 }
 
-
-const urlPost = "http://localhost:3000/api/cameras/order";
 
 let emailInput = document.getElementById("Email"),
     firstNameInput = document.getElementById("firstName"),
@@ -99,10 +112,6 @@ let emailInput = document.getElementById("Email"),
                     phone: phoneNumberInput.value,
                 };
                 async function postOrder() {
-
-                    //Create object of the cart's data
-                    let productPost = [];
-
                     try {
                         let response = await fetch(urlPost, {
                             method: 'POST',
@@ -111,7 +120,7 @@ let emailInput = document.getElementById("Email"),
                             }),
                             body: JSON.stringify({
                                 contact: contactInput,
-                                products: productPost,
+                                products: arrayCart,
                             }),
                         });
                         return await response.json();
@@ -128,19 +137,20 @@ let emailInput = document.getElementById("Email"),
 
                 }
 
-
-                postOrder().then(function() {
-                    localStorage.clear(); //Delete order informations
+                postOrder().then(function () {
+                    localStorage.clear(); // Delete order informations
+                    arrayCart.splice(0, arrayCart.length);
+                    localStorage.setItem("orderData", JSON.stringify(orderId));
                     localStorage.setItem("formData", JSON.stringify(contactInput));
-                    localStorage.setItem("orderID", JSON.stringify(contactInput));
                     localStorage.setItem("totalBasket", intBasket);
 
-                    if(localStorage.getItem("formData") !== null){
-                        window.location.href="confirmation.html";
-                    }
+
+                    window.location.href = "confirmation.html";
+
                 });
+
+
             });
         });
     });
 })();
-

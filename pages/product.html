@@ -54,37 +54,13 @@
         </nav>
     </header>
     
-    <main class="container product-container">
+    <main class="container productpage-container">
         <!--Product page Template-->
         <article class="row no-gutters justify-content-center">
             <h2 class="text-muted">Votre produit</h2>
             <section class="row no-gutters justify-content-around align-items-center product-template">
-                <img class="col-md-6 imageProduct" alt="Image d'un appareil photo">
-                <div class="col-md-4 row no-gutters flex-column justify-content-around">
-                    <div>
-                        <h3 class="productTitle"></h3>
-                        <p>Prix: <span class="price"></span>€</p>
-                    </div>
-                    <select name="lentilles" class="custom-select">
-                        <option value="Grand-angle">Grand-angle (+80€)</option>
-                        <option value="Standard" selected>Standard</option>
-                        <option value="Télé-objectif">Télé-objectif (+40€)</option>
-                        <option value="Fisheye">Fisheye (+22€)</option>
-                        <option value="Macro">Macro (+35€)</option>
-                        <option value="Portrait">Portrait (+50€)</option>
-                    </select>
-                    <a class="btn btn-outline-warning" onclick="addCart()">Ajouter au panier</a>
-                    <p>
-                        Catégorie : <span id="category"></span><br>
-
-                        Fabricant : ZEISS IKON<br>
-                        Modèle : <span id="model"></span><br>
-                        Objectif standard : <span id="objectif"></span><br>
-                        Diaphragme maxi/mini : <span id="diaphragme"></span><br>
-                        Type : <span id="type"></span><br>
-                        Vitesses : <span id="vitesse"></span><br>
-                    </p>
-                </div>
+                
+                
             </section>
         </article>
         <aside class="row no-gutters justify-content-center">
@@ -92,36 +68,12 @@
                     class="fas fa-arrow-left btn-back"></i> RETOUR</a>
         </aside>
         <!--End of Product page Template-->
-
-        <!--Drawer cart Template-->
-        <aside id="cart-sidebar" class="bg-warning container">
-            <button type="button" class="close" aria-label="Close" onclick="closeCart()">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="text-center">Votre panier</h4>
-            <hr class="w-100">
-            <section class="row no-gutters flex-column align-items-center product-sidebar"> 
-                <div class="row justify-content-around align-items-center cart-sidebar_product">
-                
-                </div>
-            </section>
-            <section class="footer row flex-column no-gutters">
-                <div class="row justify-content-between">
-                    <p>SOUS-TOTAL</p>
-                    <p class="font-weight-bold"><span id="totalPrice">0</span>€</p>
-                </div>
-                <button class="btn btn-dark"><a href="cart.html" onclick="addCartPage()" class="text-white">VALIDER</a></button>
-            </section>       
-        </aside>
-        <!--End of drawer cart Template-->
     </main>
     <footer class="row no-gutters justify-content-center align-items-center sunny-morning-gradient fixed-bottom">
         <p class="text-white">© Tolotra RAMANANTOANINA - 2020 Orinoco</p>
     </footer>
 
-    <script src="../js/404.js" async></script>
-    <script src="../js/camera.js"></script>
-    <script src="../js/product.js" async></script>
+    <script src="../js/product.js"></script>
     <script src="../js/cartDrawer.js" async></script>
 </body>
 </html>
