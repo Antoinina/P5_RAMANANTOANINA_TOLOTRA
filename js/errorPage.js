@@ -1,16 +1,16 @@
 
 const div = document.createElement('div'),
-      divChild = document.createElement('div'),
-      h2 = document.createElement('h2')
-      img = document.createElement('img'),
-      p = document.createElement('p'),
-      span = document.createElement('span');
+    divChild = document.createElement('div'),
+    h2 = document.createElement('h2'),
+    img = document.createElement('img'),
+    p = document.createElement('p'),
+    span = document.createElement('span');
 
 /* Template of 404 page */
-function page404 (page){  
+function page404(page) {
     page.appendChild(div);
     div.classList.add('container');
-    div.setAttribute('id','error-404');
+    div.setAttribute('id', 'error-404');
     div.appendChild(divChild);
     divChild.classList.add('row', 'no-gutters', 'align-items-center', 'flex-column');
     divChild.appendChild(h2);
@@ -21,7 +21,7 @@ function page404 (page){
     span.innerHTML = "La page que vous avez demandé est actuellement en cours de livraison";
     divChild.appendChild(img);
     img.classList.add('col-3');
-    img.setAttribute('src','assets/img/coursier.gif');
+    img.setAttribute('src', 'assets/img/coursier.gif');
     img.setAttribute('alt', "Animation d'un homme à vélo");
     divChild.appendChild(p);
     p.classList.add('text-center');

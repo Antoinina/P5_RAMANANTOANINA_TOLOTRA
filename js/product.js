@@ -11,12 +11,6 @@ const productPrice = document.querySelector('.price'),
     productContainer = document.querySelector('.product-container'),
     totalPrice = document.getElementById('totalPrice');
 
-let bigAnglePrice = 80,
-    tvObjectifPrice = 40,
-    fisheyePrice = 22,
-    macroPrice = 35,
-    portraitPrice = 50;
-
 async function importDataAPI() {
     const response = await fetch(url);
     if (response.ok) {
@@ -50,7 +44,7 @@ itemsArray.push(contessaInfo, continaInfo, ikontaInfo, c35Info, contaflexInfo);
 importDataAPI().then(function (responseRequest) {
 
     //Customize informations from API
-    for (i = 0; i < itemsArray.length; i++) {
+    for (let i = 0; i < itemsArray.length; i++) {
         responseRequest[i] = {
             'name': itemsArray[i].name,
             'price': itemsArray[i].price,
@@ -105,7 +99,7 @@ importDataAPI().then(function (responseRequest) {
     `;
     } else {
         // Show dynamically items selected 
-        for (i = 0; i < itemsArray.length; i++) {
+        for (let i = 0; i < itemsArray.length; i++) {
             if (productInfo === `${responseRequest[i]._id}`) {
                 titleOnglet.innerHTML += `${responseRequest[i].name}` + "- Orinoco";
                 document.querySelector('.product-template').innerHTML = `
@@ -133,8 +127,8 @@ importDataAPI().then(function (responseRequest) {
         }
 
         const cartButton = document.getElementById("addToCart"),
-              selectLens = document.querySelector("select");
-        
+            selectLens = document.querySelector("select");
+
 
         if (productInfo === responseRequest[0]._id) {
             cartButton.addEventListener("click", () => {
@@ -143,28 +137,28 @@ importDataAPI().then(function (responseRequest) {
                 localStorage.setItem("priceProduct", responseRequest[0].price);
                 localStorage.setItem("lens", selectLens.value);
             });
-        } else if (productInfo === responseRequest[1]._id){
+        } else if (productInfo === responseRequest[1]._id) {
             cartButton.addEventListener("click", () => {
                 localStorage.setItem("nameProduct", responseRequest[1].name);
                 localStorage.setItem("imageProduct", responseRequest[1].imageUrl);
                 localStorage.setItem("priceProduct", responseRequest[1].price);
                 localStorage.setItem("lens", selectLens.value);
             });
-        } else if (productInfo === responseRequest[2]._id){
+        } else if (productInfo === responseRequest[2]._id) {
             cartButton.addEventListener("click", () => {
                 localStorage.setItem("nameProduct", responseRequest[2].name);
                 localStorage.setItem("imageProduct", responseRequest[2].imageUrl);
                 localStorage.setItem("priceProduct", responseRequest[2].price);
                 localStorage.setItem("lens", selectLens.value);
             });
-        } else if(productInfo === responseRequest[3]._id){
+        } else if (productInfo === responseRequest[3]._id) {
             cartButton.addEventListener("click", () => {
                 localStorage.setItem("nameProduct", responseRequest[3].name);
                 localStorage.setItem("imageProduct", responseRequest[3].imageUrl);
                 localStorage.setItem("priceProduct", responseRequest[3].price);
                 localStorage.setItem("lens", selectLens.value);
             });
-        } else if(productInfo === responseRequest[4]._id){
+        } else if (productInfo === responseRequest[4]._id) {
             cartButton.addEventListener("click", () => {
                 localStorage.setItem("nameProduct", responseRequest[4].name);
                 localStorage.setItem("imageProduct", responseRequest[4].imageUrl);

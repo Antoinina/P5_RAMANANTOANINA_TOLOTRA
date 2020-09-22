@@ -4,8 +4,8 @@ $(document).ready(function () {
 });
 
 const urlParams = new URLSearchParams(window.location.search),
-      categoryInfo = urlParams.get('category'),
-      productPage = document.querySelector('#page-product');
+    categoryInfo = urlParams.get('category'),
+    productPage = document.querySelector('#page-product');
 
 
 if (categoryInfo !== null) {

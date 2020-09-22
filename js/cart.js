@@ -5,10 +5,10 @@ const cartContainer = document.querySelector(".cart"),
 const url = "http://localhost:3000/api/cameras",
     urlPost = "http://localhost:3000/api/cameras/order";
 
-let arrayCart = []; // Create an array to stock the item from teh localStorage
+let arrayCart = []; // Create an array to stock the item from the localStorage
 
 // Put all items in array
-for (i = 0; i < localStorage.length; i++) {
+for (let i = 0; i < localStorage.length; i++) {
     arrayCart.push(localStorage[i]);
 }
 
@@ -21,7 +21,7 @@ function hasard(min, max) {
     return min + Math.floor(Math.random() * (max - min + 1));
 }
 
-const orderId = hasard(112225,25549883);
+const orderId = hasard(112225, 25549883);
 
 
 if (arrayCart != null) {
