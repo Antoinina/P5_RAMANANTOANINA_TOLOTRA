@@ -136,60 +136,27 @@ aside .text-container {
   padding-bottom: 8rem;
 }
 
-/* Cart sidebar */
-#cart-sidebar {
-  width: 25%;
-  min-height: 770px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  /* To hide the sidebar */
-  -webkit-transform: translate(0, -105%);
-          transform: translate(0, -105%);
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+@media (max-width: 480px) {
+  .productpage-container aside {
+    position: relative !important;
+    top: -50px;
+    z-index: 10;
+  }
+  .productpage-container .product-template {
+    position: relative !important;
+    top: -25px;
+  }
 }
 
-#cart-sidebar .cart-sidebar_product {
-  margin-bottom: 1rem;
-}
-
-#cart-sidebar .cart-sidebar_product .col-7 {
-  margin-bottom: 1em;
-}
-
-#cart-sidebar .product-sidebar .btn {
-  padding: 0 0.75em !important;
-}
-
-#cart-sidebar .product-sidebar .btn span {
-  font-size: 20px;
-}
-
-#cart-sidebar .product-sidebar .btn:hover {
-  opacity: 0.8;
-}
-
-#cart-sidebar .product-sidebar #quantity {
-  padding: 0 1em;
-}
-
-#cart-sidebar .footer {
-  position: fixed;
-  top: 650px;
-  width: 80%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#cart-sidebar .footer p {
-  margin-bottom: 1rem !important;
-}
-
-#cart-sidebar > button {
-  position: relative;
-  bottom: 30px;
+@media (min-width: 481px) and (max-width: 770px) {
+  .productpage-container aside {
+    position: relative !important;
+    top: -60px;
+    z-index: 10;
+  }
+  .productpage-container .product-template {
+    position: relative !important;
+    top: -25px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -126,57 +126,32 @@ aside{
     padding-bottom: 8rem;
 }
 
-/* Cart sidebar */
-#cart-sidebar{
-    width: 25%;
-    min-height:770px;
-    position: absolute;
-    right: 0;
-    top:0;
 
-    /* To hide the sidebar */
-    transform: translate(0, -105%);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-
-    .cart-sidebar_product{
-        margin-bottom: 1rem;
-
-        .col-7{
-            margin-bottom:1em;
-        }
-    }
-
-    .product-sidebar{
-        .btn{
-            padding:0 0.75em!important;   
-            span{
-                font-size:20px;
-            }
-            &:hover{
-                opacity: 0.8;
-            }   
-        }
-    
-        #quantity{
-            padding:0 1em;
+@media (max-width:480px){
+    .productpage-container{
+        aside{
+            position: relative!important;
+            top:-50px;
+            z-index:10;
         }
 
-    }
-
-    .footer{
-        position: fixed;
-        top: 650px;
-        width: 80%;
-        margin-left:0;
-        margin-right: 0;
-        p{
-            margin-bottom: 1rem!important;
+        .product-template{
+            position: relative!important;
+            top:-25px;
         }
     }
+}
 
-    &>button{
-        position: relative;
-        bottom:30px;
+@media (min-width:481px) and (max-width:770px){
+    .productpage-container{
+        aside{
+            position: relative!important;
+            top:-60px;
+            z-index:10;
+        }
+        .product-template{
+            position: relative!important;
+            top:-25px;
+        }
     }
-    
 }

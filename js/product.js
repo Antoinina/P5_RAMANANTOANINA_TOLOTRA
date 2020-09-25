@@ -9,6 +9,7 @@ const productPrice = document.querySelector('.price'),
     productDescription = document.getElementById('descriptionBloc'),
     productPageContainer = document.querySelector('.productpage-container'),
     productContainer = document.querySelector('.product-container'),
+    productContainerChild = document.querySelector('.product-container div'),
     totalPrice = document.getElementById('totalPrice');
 
 async function importDataAPI() {
@@ -16,6 +17,7 @@ async function importDataAPI() {
     if (response.ok) {
         return await response.json(); // Pick all items in API
     } else {
+        productContainer.removeChild(productContainerChild);
         page404(productContainer);
         console.error;
     }
@@ -104,7 +106,7 @@ importDataAPI().then(function (responseRequest) {
                 titleOnglet.innerHTML += `${responseRequest[i].name}` + "- Orinoco";
                 document.querySelector('.product-template').innerHTML = `
                 <img class="col-md-5 imageProduct" src="${responseRequest[i].imageUrl}" alt="Image d'un appareil photo">
-                <div class="col-md-4 row no-gutters flex-column justify-content-center">
+                <div class="col-md-5 row no-gutters flex-column justify-content-center textProduct">
                     <div>
                         <h3 class="productTitle">${responseRequest[i].name}</h3>
                         <p>Prix: <span class="price">${responseRequest[i].price}</span>€</p>

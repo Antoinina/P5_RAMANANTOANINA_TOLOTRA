@@ -144,9 +144,8 @@ let emailInput = document.getElementById("Email"),
                     localStorage.setItem("formData", JSON.stringify(contactInput));
                     localStorage.setItem("totalBasket", intBasket);
 
-                    if(localStorage.getItem("formData") != null){
-                        window.location.href = "confirmation.html";
-                    }
+                    window.location.href = "confirmation.html";
+
                 });
 
 
